@@ -116,16 +116,6 @@
                 </div>
 
                 <div class="p-6 space-y-5">
-					<div>
-                        <label class="block mb-1.5 text-sm font-semibold text-on-surface-variant">
-                            Jangka Waktu Proyek (Tahun)
-                        </label>
-                        <input
-                            id="input-waktu-proyek"
-                            type="number"
-                            placeholder="Contoh: 20"
-                            class="w-full border border-outline-variant focus:border-[#003d9b] rounded-xl transition-all placeholder-slate-400 text-sm">
-                    </div>
                     <div>
                         <label class="block mb-1.5 text-sm font-semibold text-on-surface-variant">
                             Investasi Capital / CAPEX (USD)
