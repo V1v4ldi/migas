@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict NfkfyhCJCwt8Fna3et0hbQOG8Kr4dHA5JLIIXRwChBkMsVG78fgjttiS5p2huml
+\restrict QhtjenyMff6O2UL3HQp2CqVLM5IUmBwpiDD2NdteDwyVSmrCRSiIhgusD65q5Gz
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.4
@@ -50,7 +50,8 @@ CREATE TABLE public.detail_project (
     tax_income_m double precision,
     tax_m double precision,
     ncf_m double precision,
-    tahun_ke smallint
+    tahun_ke smallint,
+    project_id uuid
 );
 
 
@@ -76,7 +77,7 @@ ALTER TABLE public.project OWNER TO ballack;
 -- Data for Name: detail_project; Type: TABLE DATA; Schema: public; Owner: ballack
 --
 
-COPY public.detail_project (id, produksi_m, income_m, capex_m, non_capex_m, opex_m, depresiasi_m, tax_income_m, tax_m, ncf_m, tahun_ke) FROM stdin;
+COPY public.detail_project (id, produksi_m, income_m, capex_m, non_capex_m, opex_m, depresiasi_m, tax_income_m, tax_m, ncf_m, tahun_ke, project_id) FROM stdin;
 \.
 
 
@@ -105,8 +106,16 @@ ALTER TABLE ONLY public.project
 
 
 --
+-- Name: detail_project fk_detail_project_to_project_id; Type: FK CONSTRAINT; Schema: public; Owner: ballack
+--
+
+ALTER TABLE ONLY public.detail_project
+    ADD CONSTRAINT fk_detail_project_to_project_id FOREIGN KEY (project_id) REFERENCES public.project(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
-\unrestrict NfkfyhCJCwt8Fna3et0hbQOG8Kr4dHA5JLIIXRwChBkMsVG78fgjttiS5p2huml
+\unrestrict QhtjenyMff6O2UL3HQp2CqVLM5IUmBwpiDD2NdteDwyVSmrCRSiIhgusD65q5Gz
 
